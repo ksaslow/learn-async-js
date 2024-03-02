@@ -37,5 +37,5 @@ Promise.all(rowSumPromises)
         console.log(`Sum = ${sum}`);
     })
     .catch((error) => console.log(`Error message: ${err}`));
-// use Promise.all() (note: Promise.all() soltuion needs to be pushed to branch 022724!)
+
 // then REPLACE that with the asynch/await solution to be pushed to 022924!!!
