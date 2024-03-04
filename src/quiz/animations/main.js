@@ -25,6 +25,7 @@ const aliceTumbling = [
     }
   }
 
+  // OLD: 
   // alice1
   //   .animate(aliceTumbling, aliceTiming)
   //   .finished
