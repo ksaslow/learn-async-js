@@ -15,7 +15,9 @@ const fetchPromise = fetch(
           });
         })
     .catch((error) => {
-        console.error(`Failed to get products: ${error}`);
+        console.error(`Failed to get products: ${error}`); 
+        // note: the catch block ALSO runs asynchronously!! Which is why when we execute this, we see
+        // "Chaining promises ..." first, then the error message AFTER!
     });
 
     console.log('Chaining promises ... ');

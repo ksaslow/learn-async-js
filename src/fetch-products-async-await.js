@@ -1,8 +1,10 @@
+// compare this to the fetch-promise-results.js code!!!
+
 async function fetchProducts() {
     console.log('Begin fetch ... ');
         // after this line, our function will wait for the `fetch()` call to be settled
         // the `fetch()` call will either return a Response or throw an error
-    const response = await fetch(
+    const response = await fetch( // await fetch, not just fetch! WE KNOW IT WILL RETURN PROMISE BY DEFAULT
         "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
     );
     console.log('Fetch done');
@@ -17,9 +19,10 @@ async function fetchProducts() {
   }
   
   async function main() {
-    console.log('Begin main ... ')
+    console.log('Begin main ... ') // this executes SYNCHRONOUSLY!
     try {
-        const productName = await fetchProducts();
+        const productName = await fetchProducts(); // the event loop will schedule this on another thread to run asynchronously!
+        // notice we DONT HAVE ANY PROMISE CHAINING!
         console.log(productName);
     }
     catch(err) {
